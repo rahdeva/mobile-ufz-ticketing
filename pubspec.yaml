@@ -33,6 +33,7 @@ dependencies:
   modal_bottom_sheet: ^3.0.0-pre
   permission_handler: ^10.2.0
   pull_to_refresh: ^2.0.0
+  qr_code_scanner: ^1.0.1
   retrofit: any
   retrofit_generator: any
   shared_preferences: ^2.0.18
@@ -40,12 +41,12 @@ dependencies:
   sizer: ^2.0.15
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
   build_runner: any
   flutter_gen_runner: null
   flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 flutter_launcher_icons:
   android: true

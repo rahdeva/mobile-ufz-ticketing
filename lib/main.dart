@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
         fallbackLocale: LocaleHelper().fallbackLocale,
         initialRoute: PageName.LOADER,
         getPages: PageRoutes.pages,
-        theme: AppTheme.buildThemeData(false),
+        theme: AppTheme.buildThemeData(false, context),
         builder: (BuildContext context, child) {
           return MediaQuery(
-            child: child ?? Container(),
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child ?? Container(),
           );
         },
       );
