@@ -24,45 +24,29 @@ class $LibResourcesGen {
 class $LibResourcesImagesGen {
   const $LibResourcesImagesGen();
 
-  /// File path: lib/resources/images/empty_state_code.png
-  AssetGenImage get emptyStateCode =>
-      const AssetGenImage('lib/resources/images/empty_state_code.png');
+  /// File path: lib/resources/images/ic_discover_active.png
+  AssetGenImage get icDiscoverActive =>
+      const AssetGenImage('lib/resources/images/ic_discover_active.png');
 
-  /// File path: lib/resources/images/ic_activity_active.png
-  AssetGenImage get icActivityActive =>
-      const AssetGenImage('lib/resources/images/ic_activity_active.png');
+  /// File path: lib/resources/images/ic_discover_unactive.png
+  AssetGenImage get icDiscoverUnactive =>
+      const AssetGenImage('lib/resources/images/ic_discover_unactive.png');
 
-  /// File path: lib/resources/images/ic_activity_unactive.png
-  AssetGenImage get icActivityUnactive =>
-      const AssetGenImage('lib/resources/images/ic_activity_unactive.png');
+  /// File path: lib/resources/images/ic_past_ticket_active.png
+  AssetGenImage get icPastTicketActive =>
+      const AssetGenImage('lib/resources/images/ic_past_ticket_active.png');
 
-  /// File path: lib/resources/images/ic_home_active.png
-  AssetGenImage get icHomeActive =>
-      const AssetGenImage('lib/resources/images/ic_home_active.png');
+  /// File path: lib/resources/images/ic_past_ticket_unactive.png
+  AssetGenImage get icPastTicketUnactive =>
+      const AssetGenImage('lib/resources/images/ic_past_ticket_unactive.png');
 
-  /// File path: lib/resources/images/ic_home_unactive.png
-  AssetGenImage get icHomeUnactive =>
-      const AssetGenImage('lib/resources/images/ic_home_unactive.png');
+  /// File path: lib/resources/images/ic_setting_active.png
+  AssetGenImage get icSettingActive =>
+      const AssetGenImage('lib/resources/images/ic_setting_active.png');
 
-  /// File path: lib/resources/images/ic_logo_suitcore_main.png
-  AssetGenImage get icLogoSuitcoreMain =>
-      const AssetGenImage('lib/resources/images/ic_logo_suitcore_main.png');
-
-  /// File path: lib/resources/images/ic_notif_active.png
-  AssetGenImage get icNotifActive =>
-      const AssetGenImage('lib/resources/images/ic_notif_active.png');
-
-  /// File path: lib/resources/images/ic_notif_unactive.png
-  AssetGenImage get icNotifUnactive =>
-      const AssetGenImage('lib/resources/images/ic_notif_unactive.png');
-
-  /// File path: lib/resources/images/ic_profile_active.png
-  AssetGenImage get icProfileActive =>
-      const AssetGenImage('lib/resources/images/ic_profile_active.png');
-
-  /// File path: lib/resources/images/ic_profile_unactive.png
-  AssetGenImage get icProfileUnactive =>
-      const AssetGenImage('lib/resources/images/ic_profile_unactive.png');
+  /// File path: lib/resources/images/ic_setting_unactive.png
+  AssetGenImage get icSettingUnactive =>
+      const AssetGenImage('lib/resources/images/ic_setting_unactive.png');
 
   /// File path: lib/resources/images/img_empty.png
   AssetGenImage get imgEmpty =>
@@ -78,16 +62,12 @@ class $LibResourcesImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        emptyStateCode,
-        icActivityActive,
-        icActivityUnactive,
-        icHomeActive,
-        icHomeUnactive,
-        icLogoSuitcoreMain,
-        icNotifActive,
-        icNotifUnactive,
-        icProfileActive,
-        icProfileUnactive,
+        icDiscoverActive,
+        icDiscoverUnactive,
+        icPastTicketActive,
+        icPastTicketUnactive,
+        icSettingActive,
+        icSettingUnactive,
         imgEmpty,
         imgError,
         userPlaceholder
@@ -158,7 +138,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 

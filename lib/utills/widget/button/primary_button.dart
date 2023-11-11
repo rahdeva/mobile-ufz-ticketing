@@ -13,7 +13,7 @@ class PrimaryButtonWidget extends StatelessWidget {
     this.padding, 
     this.customColors, 
     this.height,
-    this.smallText = false,
+    this.otherButtonColor = false,
   });
 
   final String buttonText;
@@ -22,7 +22,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   final Color? customColors;
   final double? borderRadius;
   final double? padding;
-  final bool smallText;
+  final bool otherButtonColor;
   final EdgeInsetsGeometry? margin;
   final Function() onPressed;
 
@@ -49,9 +49,9 @@ class PrimaryButtonWidget extends StatelessWidget {
           child: Text(
             buttonText,
             textAlign: TextAlign.center,
-            style: smallText
-            ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: AppColors.white,
+            style: otherButtonColor
+            ? Theme.of(context).textTheme.bodyLarge!.copyWith(
+                color: AppColors.red,
                 fontWeight: FontWeight.w600
               )
             : Theme.of(context).textTheme.bodyLarge!.copyWith(

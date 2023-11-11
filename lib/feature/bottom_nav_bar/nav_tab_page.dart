@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_ufz_ticketing/feature/bottom_nav_bar/widgets/sm_bottom_navbar_item.dart';
-import 'package:mobile_ufz_ticketing/feature/my_employee/my_employee_page.dart';
-import 'package:mobile_ufz_ticketing/feature/notification/notification_page.dart';
+import 'package:mobile_ufz_ticketing/feature/past_ticket/past_ticket_page.dart';
+import 'package:mobile_ufz_ticketing/feature/setting/setting_page.dart';
 import 'package:mobile_ufz_ticketing/resources/resources.dart';
-import '/feature/home/home_page.dart';
-import '/feature/profile/profile_page.dart';
+import '../discover/discover_page.dart';
 
 import 'nav_tab_controller.dart';
 
@@ -21,10 +20,9 @@ class NavTabPage extends StatelessWidget {
             child: IndexedStack(
               index: controller.tabIndex,
               children: const [
-                HomePage(),
-                MyEmployeePage(),
-                NotificationPage(),
-                ProfilePage(),
+                DashboardPage(),
+                PastTicketPage(),
+                SettingPage(),
               ],
             ),
           ),
@@ -37,47 +35,37 @@ class NavTabPage extends StatelessWidget {
               )
             ),
             child: BottomAppBar(
-              shape: CircularNotchedRectangle(),
+              shape: const CircularNotchedRectangle(),
               notchMargin: 5,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SMBottomNavBarItem(
-                    imageDeactive: AppImages.icHomeUnactive.image(),
-                    imageActive: AppImages.icHomeActive.image(),
+                    imageDeactive: AppImages.icDiscoverUnactive.image(),
+                    imageActive: AppImages.icDiscoverActive.image(),
                     currentIndex: controller.tabIndex,
                     onTap: controller.changeTabIndex,
-                    label: 'txt_menu_home'.tr,
+                    label: 'txt_bottomnav_discover'.tr,
                     index: 0,
                   ),
                   SMBottomNavBarItem(
-                    imageDeactive: AppImages.icActivityUnactive.image(),
-                    imageActive: AppImages.icActivityActive.image(),
+                    imageDeactive: AppImages.icPastTicketUnactive.image(),
+                    imageActive: AppImages.icPastTicketActive.image(),
                     currentIndex: controller.tabIndex,
                     onTap: (value) {
                       controller.changeTabIndex(value);
                     },
-                    label: 'txt_menu_my_activity'.tr,
+                    label: 'txt_bottomnav_past_ticket'.tr,
                     index: 1,
                   ),
                   SMBottomNavBarItem(
-                    imageDeactive: AppImages.icNotifUnactive.image(),
-                    imageActive: AppImages.icNotifActive.image(),
+                    imageDeactive: AppImages.icSettingUnactive.image(),
+                    imageActive: AppImages.icSettingActive.image(),
                     currentIndex: controller.tabIndex,
                     onTap: controller.changeTabIndex,
-                    label: 'txt_menu_notification'.tr,
+                    label: 'txt_bottomnav_setting'.tr,
                     index: 2,
-                  ),
-                  SMBottomNavBarItem(
-                    imageDeactive: AppImages.icProfileUnactive.image(),
-                    imageActive: AppImages.icProfileActive.image(),
-                    currentIndex: controller.tabIndex,
-                    onTap: (value) {
-                      controller.changeTabIndex(value);
-                    },
-                    label: 'txt_menu_profile'.tr,
-                    index: 3,
                   ),
                 ],
               ),

@@ -1,6 +1,6 @@
 const Map<String, String> en = {
   // Bottom Nav Bar
-  'txt_bottomnav_dashboard': 'Dashboard',
+  'txt_bottomnav_discover': 'Discover',
   'txt_bottomnav_setting': 'Setting',
   'txt_bottomnav_past_ticket': 'Past Ticket',
 
@@ -51,10 +51,12 @@ const Map<String, String> en = {
   'txt_flow_logout_yes_logout': 'Yes, Logout',
   'txt_flow_logout_cancel': 'Cancel',
 
-  // Validation
-  'txt_valid_email': 'Please enter a valid email address.',
-  'txt_valid_password': 'Password must be at least 6 characters.',
-  'txt_valid_name': 'Please enter a name.',
-  'txt_valid_number': 'Please enter a number.',
-  'txt_valid_notEmpty': 'This is a required field.',
+  // Validator
+  'txt_validator_required': 'This section must not be empty',
+  'txt_validator_valid_email': 'Enter a valid email',
+  'txt_validator_password_length': 'Password must be at least 8 characters',
+  'txt_validator_valid_year': 'Enter a valid year',
+  'txt_validator_greater_than_or_equal': 'Value must be greater than or equal to',
+  'txt_validator_less_than_or_equal': 'Value must be less than or equal to',
+  'txt_validator_numbers_only': 'This section must be filled with numbers',
 };

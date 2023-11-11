@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mobile_ufz_ticketing/feature/home/home_page.dart';
-import 'package:mobile_ufz_ticketing/feature/my_employee/my_employee_page.dart';
-import 'package:mobile_ufz_ticketing/feature/notification/notification_page.dart';
-import 'package:mobile_ufz_ticketing/feature/profile/profile_page.dart';
+import 'package:mobile_ufz_ticketing/feature/discover/discover_page.dart';
+import 'package:mobile_ufz_ticketing/feature/setting/setting_page.dart';
 import '/feature/bottom_nav_bar/nav_tab_binding.dart';
 import '/feature/bottom_nav_bar/nav_tab_page.dart';
 import '/feature/loader/loading_page.dart';
@@ -28,20 +26,12 @@ class PageRoutes {
       binding: NavTabBinding()
     ),
     GetPage(
-      name: PageName.HOME,
-      page: () => const HomePage(),
+      name: PageName.DASHBOARD,
+      page: () => const DashboardPage(),
     ),
     GetPage(
-      name: PageName.MY_EMPLOYEE,
-      page: () => const MyEmployeePage(),
-    ),
-    GetPage(
-      name: PageName.NOTIFICATION,
-      page: () => const NotificationPage(),
-    ),
-    GetPage(
-      name: PageName.PROFILE,
-      page: () => const ProfilePage(),
+      name: PageName.PAST_TICKET,
+      page: () => const SettingPage(),
     ),
   ];
 }

@@ -1,6 +1,6 @@
 const Map<String, String> id = {
   // Bottom Nav Bar
-  'txt_bottomnav_dashboard': 'Dasbor',
+  'txt_bottomnav_discover': 'Discover',
   'txt_bottomnav_setting': 'Pengaturan',
   'txt_bottomnav_past_ticket': 'Tiket Sebelumnya',
 
@@ -51,10 +51,12 @@ const Map<String, String> id = {
   'txt_flow_logout_yes_logout': 'Ya, Keluar',
   'txt_flow_logout_cancel': 'Batal',
 
-  // Validation
-  'txt_valid_email': 'Format email masih salah',
-  'txt_valid_password': 'Minimal password adalah 6 karakter',
-  'txt_valid_name': 'Silahkan masukkan Nama anda',
-  'txt_valid_number': 'Silahkan masukkan nomer yang benar',
-  'txt_valid_notEmpty': 'Kolom tidak boleh kosong',
+  // Validator
+  'txt_validator_required': 'Bagian ini tidak boleh kosong',
+  'txt_validator_valid_email': 'Masukkan dengan email valid',
+  'txt_validator_password_length': 'Password minimal 8 karakter',
+  'txt_validator_valid_year': 'Masukkan dengan tahun valid',
+  'txt_validator_greater_than_or_equal': 'Nilai harus lebih dari atau sama dengan',
+  'txt_validator_less_than_or_equal': 'Nilai harus kurang dari atau sama dengan',
+  'txt_validator_numbers_only': 'Bagian ini harus diisi dengan angka',
 };

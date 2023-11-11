@@ -129,10 +129,13 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
           floatingActionButton: Container(
-            margin: const EdgeInsets.only(bottom: 60),
+            margin: MediaQuery.of(context).viewInsets.bottom != 0
+              ? const EdgeInsets.only(bottom: 0)
+              : const EdgeInsets.only(bottom: 60),
             child: PrimaryButtonWidget(
+              borderRadius: 12,
               margin: const EdgeInsets.symmetric(horizontal: 35),
               buttonText: "txt_flow_login_login".tr, 
               onPressed: () async {
