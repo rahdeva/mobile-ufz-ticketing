@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '/resources/resources.dart';
 import 'package:sizer/sizer.dart';
 
-class PrimaryButtonWidget extends StatelessWidget {
-  const PrimaryButtonWidget({
+class SecondaryButtonWidget extends StatelessWidget {
+  const SecondaryButtonWidget({
     super.key, 
     required this.buttonText, 
     required this.onPressed, 
@@ -13,7 +13,6 @@ class PrimaryButtonWidget extends StatelessWidget {
     this.padding, 
     this.customColors, 
     this.height,
-    this.smallText = false,
   });
 
   final String buttonText;
@@ -22,7 +21,6 @@ class PrimaryButtonWidget extends StatelessWidget {
   final Color? customColors;
   final double? borderRadius;
   final double? padding;
-  final bool smallText;
   final EdgeInsetsGeometry? margin;
   final Function() onPressed;
 
@@ -32,15 +30,14 @@ class PrimaryButtonWidget extends StatelessWidget {
       width: width ?? 100.w,
       height: height,
       margin: margin ?? const EdgeInsets.symmetric(horizontal: 16),
-      child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
-            customColors ?? AppColors.blue,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
           ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 10),
-            )
+          side: const BorderSide(
+            width: 1.5,
+            color: AppColors.gray300,
           )
         ),
         onPressed: onPressed, 
@@ -49,15 +46,10 @@ class PrimaryButtonWidget extends StatelessWidget {
           child: Text(
             buttonText,
             textAlign: TextAlign.center,
-            style: smallText
-            ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: AppColors.white,
-                fontWeight: FontWeight.w600
-              )
-            : Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: AppColors.white,
-                fontWeight: FontWeight.w600
-              )
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              color: AppColors.gray500,
+              fontWeight: FontWeight.w400,
+            )
           ),
         )
       ),

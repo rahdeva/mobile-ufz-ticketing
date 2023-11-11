@@ -72,12 +72,12 @@ class TextFieldWidget extends StatelessWidget {
         suffixIcon: suffixIcon,
         isDense: true,
         floatingLabelBehavior: floatingLabelBehavior,
-        contentPadding: contentPadding ?? const EdgeInsets.fromLTRB(12,16,12,16), 
+        contentPadding: contentPadding ?? const EdgeInsets.fromLTRB(12, 16, 12, 16), 
         hintStyle: hintStyle ?? Theme.of(context).textTheme.bodyMedium!.copyWith(
           color: AppColors.gray500
         ),
         labelStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
-          color: AppColors.blue,
+          color: AppColors.gray500,
           fontWeight: FontWeight.w600
         ),
         errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -86,21 +86,21 @@ class TextFieldWidget extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.blue, 
+            color: AppColors.gray300, 
             width: 1
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.blue, 
+            color: AppColors.gray300, 
             width: 1
           )
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.blue, 
+            color: AppColors.gray300, 
             width: 1
           )
         ),
@@ -114,7 +114,7 @@ class TextFieldWidget extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.blue, 
+            color: AppColors.gray500, 
             width: 2
           )
         ),

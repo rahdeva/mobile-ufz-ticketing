@@ -138,26 +138,26 @@ class AppTheme {
       filled: true,
       fillColor: Colors.grey[50],
       contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      suffixIconColor: AppColors.blue,
-      prefixIconColor: AppColors.blue,
+      suffixIconColor: AppColors.gray500,
+      prefixIconColor: AppColors.gray500,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.blue, 
+          color: AppColors.gray300, 
           width: 1
         ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.blue, 
+          color: AppColors.gray300, 
           width: 1
         )
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.blue, 
+          color: AppColors.gray300, 
           width: 1
         )
       ),
@@ -171,7 +171,7 @@ class AppTheme {
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.blue, 
+          color: AppColors.gray500, 
           width: 2
         )
       ),
@@ -183,7 +183,7 @@ class AppTheme {
         ),
       ),
       labelStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
-        color: AppColors.blue,
+        color: AppColors.gray300,
         fontWeight: FontWeight.w600
       ),
       hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(

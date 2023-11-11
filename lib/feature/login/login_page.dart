@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
+import 'package:mobile_ufz_ticketing/utills/widget/button/secondary_button.dart';
+import 'package:mobile_ufz_ticketing/utills/widget/forms/label_form_widget.dart';
 import '/utills/helper/validator.dart';
 import '/utills/widget/button/primary_button.dart';
 import '/utills/widget/forms/text_field_widget.dart';
@@ -13,99 +15,141 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GetBuilder<LoginController>(
-        init: LoginController(),
-        builder: (controller) {
-          return FormBuilder(
-            key: controller.formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(height: 40),
-                  Column(
-                    children: [
-                      Text(
-                        "JAMKRIDA\nDIGITAL INFORMATION",
-                        style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                          color: AppColors.blue,
-                          fontWeight: FontWeight.w700
+    return GetBuilder<LoginController>(
+      init: LoginController(),
+      builder: (controller) {
+        return Scaffold(
+          body: SafeArea(
+            child: FormBuilder(
+              key: controller.formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 30),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 35),
+                        child: SecondaryButtonWidget(
+                          margin: const EdgeInsets.all(0),
+                          width: 120,
+                          buttonText: "txt_flow_login_language".tr,
+                          padding: 5,
+                          onPressed: (){}
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 12),
-                      Text(
-                        "Silahkan login untuk melanjutkan",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: AppColors.black,
-                          fontWeight: FontWeight.w300
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 32),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16),
-                    child: TextFieldWidget(
-                      name: 'username',
-                      label: 'Username',
-                      validator: Validator.required(),
-                      keyboardType: TextInputType.text,
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      borderRadius: 10,
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16),
-                    child: TextFieldWidget(
-                      name: 'password',
-                      label: 'Password',
-                      obsecure: controller.isObscure,
-                      validator: Validator.required(),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      keyboardType: TextInputType.text,
-                      borderRadius: 10,
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          controller.isObscure = !controller.isObscure;
-                          controller.update();
-                        },
-                        icon: controller.isObscure
-                          ? const Icon(
-                              Icons.visibility_outlined,
-                              color: AppColors.blue,
-                            )
-                          : const Icon(
-                              Icons.visibility_off_outlined,
-                              color: AppColors.blue,
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(35, 20, 35, 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "txt_flow_login_welcome".tr,
+                            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                              color: AppColors.black,
+                              fontWeight: FontWeight.w700,
                             ),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            "txt_flow_login_sign_in".tr,
+                            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                              color: AppColors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 60),
-                  PrimaryButtonWidget(
-                    buttonText: "LOGIN", 
-                    onPressed: () async {
-                      if (
-                        controller.formKey.currentState != null &&
-                        controller.formKey.currentState!.saveAndValidate()
-                      ){
-                        controller.signInWithEmailAndPassword(
-                          controller.formKey.currentState!.fields['username']!.value,
-                          controller.formKey.currentState!.fields['password']!.value,
-                        );
-                      }
-                    },
-                  ),
-                ],
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(35, 0, 35, 0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          LabelFormWidget(
+                            labelText: "txt_flow_login_email".tr
+                          ),
+                          TextFieldWidget(
+                            name: 'email',
+                            hintText: 'txt_flow_login_enter_email'.tr,
+                            validator: Validator.required(),
+                            keyboardType: TextInputType.text,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            borderRadius: 8,
+                          ),
+                          const SizedBox(height: 16),
+                          LabelFormWidget(
+                            labelText: "txt_flow_login_password".tr
+                          ),
+                          TextFieldWidget(
+                            name: 'password',
+                            hintText: 'txt_flow_login_enter_password'.tr,
+                            obsecure: controller.isObscure,
+                            validator: Validator.required(),
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            keyboardType: TextInputType.text,
+                            borderRadius: 8,
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                controller.isObscure = !controller.isObscure;
+                                controller.update();
+                              },
+                              icon: controller.isObscure
+                                ? const Icon(
+                                    Icons.visibility_outlined,
+                                    color: AppColors.gray500,
+                                  )
+                                : const Icon(
+                                    Icons.visibility_off_outlined,
+                                    color: AppColors.gray500,
+                                  ),
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          InkWell(
+                            onTap: (){}, 
+                            child: Text(
+                              'txt_flow_login_forgot_password'.tr,
+                              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                color: AppColors.blue,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          );
-        },
-      ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Container(
+            margin: const EdgeInsets.only(bottom: 60),
+            child: PrimaryButtonWidget(
+              margin: const EdgeInsets.symmetric(horizontal: 35),
+              buttonText: "txt_flow_login_login".tr, 
+              onPressed: () async {
+                if (
+                  controller.formKey.currentState != null &&
+                  controller.formKey.currentState!.saveAndValidate()
+                ){
+                  controller.signInWithEmailAndPassword(
+                    controller.formKey.currentState!.fields['email']!.value,
+                    controller.formKey.currentState!.fields['password']!.value,
+                  );
+                }
+              },
+            ),
+          ),
+        );
+      }
     );
   }
 }
