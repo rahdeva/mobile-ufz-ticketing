@@ -4,22 +4,22 @@ import '/resources/resources.dart';
 class AppTheme {
   static ThemeData buildThemeData(bool darkMode, BuildContext context) {
     return ThemeData(
-      primaryColor: AppColors.colorPrimary,
+      primaryColor: AppColors.blue,
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.white,
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       appBarTheme: lightAppBar(),
-      fontFamily: 'Poppins',
+      fontFamily: 'DMSans',
       floatingActionButtonTheme: const FloatingActionButtonThemeData(),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.colorPrimary,
+          backgroundColor: AppColors.blue,
         )
       ),
       radioTheme: RadioThemeData(
         fillColor: MaterialStateColor.resolveWith(
-          (states) => AppColors.colorPrimary3
+          (states) => AppColors.blue
         ),
       ),
       bottomNavigationBarTheme: lightNavigation(),
@@ -82,7 +82,7 @@ class AppTheme {
       ),
       inputDecorationTheme: inputDecoration(darkMode, context), 
       colorScheme: ThemeData().colorScheme.copyWith(
-        primary: AppColors.colorPrimary,
+        primary: AppColors.blue,
       ).copyWith(
         background: (darkMode) ? AppColors.black : AppColors.white
       ),
@@ -138,26 +138,26 @@ class AppTheme {
       filled: true,
       fillColor: Colors.grey[50],
       contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      suffixIconColor: AppColors.colorPrimary3,
-      prefixIconColor: AppColors.colorPrimary3,
+      suffixIconColor: AppColors.blue,
+      prefixIconColor: AppColors.blue,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.colorPrimary3, 
+          color: AppColors.blue, 
           width: 1
         ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.colorPrimary3, 
+          color: AppColors.blue, 
           width: 1
         )
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.colorPrimary3, 
+          color: AppColors.blue, 
           width: 1
         )
       ),
@@ -171,7 +171,7 @@ class AppTheme {
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(
-          color: AppColors.colorPrimary3, 
+          color: AppColors.blue, 
           width: 2
         )
       ),
@@ -183,11 +183,11 @@ class AppTheme {
         ),
       ),
       labelStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
-        color: AppColors.colorPrimary,
+        color: AppColors.blue,
         fontWeight: FontWeight.w600
       ),
       hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        color: AppColors.grey3
+        color: AppColors.gray500
       ),
       errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
         color: AppColors.red

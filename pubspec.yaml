@@ -63,8 +63,10 @@ flutter:
   assets:
     - lib/resources/images/
   fonts:
-    - family: Poppins
+    - family: DMSans
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Light.ttf
-        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/DMSans-Light.ttf
+        - asset: assets/fonts/DMSans-Regular.ttf
+        - asset: assets/fonts/DMSans-Medium.ttf
+        - asset: assets/fonts/DMSans-SemiBold.ttf
+        - asset: assets/fonts/DMSans-Bold.ttf

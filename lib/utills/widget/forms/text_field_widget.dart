@@ -65,7 +65,7 @@ class TextFieldWidget extends StatelessWidget {
           ? filled
             ? AppColors.white
             : Colors.transparent
-          : AppColors.grey3,
+          : AppColors.gray500,
         labelText: label,
         hintText: hintText,
         prefixIcon: prefixIcon,
@@ -74,10 +74,10 @@ class TextFieldWidget extends StatelessWidget {
         floatingLabelBehavior: floatingLabelBehavior,
         contentPadding: contentPadding ?? const EdgeInsets.fromLTRB(12,16,12,16), 
         hintStyle: hintStyle ?? Theme.of(context).textTheme.bodyMedium!.copyWith(
-          color: AppColors.grey2
+          color: AppColors.gray500
         ),
         labelStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
-          color: AppColors.colorPrimary,
+          color: AppColors.blue,
           fontWeight: FontWeight.w600
         ),
         errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -86,21 +86,21 @@ class TextFieldWidget extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.colorPrimary, 
+            color: AppColors.blue, 
             width: 1
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.colorPrimary, 
+            color: AppColors.blue, 
             width: 1
           )
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.colorPrimary, 
+            color: AppColors.blue, 
             width: 1
           )
         ),
@@ -114,7 +114,7 @@ class TextFieldWidget extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
-            color: AppColors.colorPrimary, 
+            color: AppColors.blue, 
             width: 2
           )
         ),
