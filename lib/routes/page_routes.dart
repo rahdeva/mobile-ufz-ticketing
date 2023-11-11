@@ -1,39 +1,47 @@
+import 'package:get/get.dart';
+import 'package:mobile_ufz_ticketing/feature/home/home_page.dart';
+import 'package:mobile_ufz_ticketing/feature/my_employee/my_employee_page.dart';
+import 'package:mobile_ufz_ticketing/feature/notification/notification_page.dart';
+import 'package:mobile_ufz_ticketing/feature/profile/profile_page.dart';
 import '/feature/bottom_nav_bar/nav_tab_binding.dart';
 import '/feature/bottom_nav_bar/nav_tab_page.dart';
-import '/feature/profile/profile_page.dart';
-import 'package:get/get.dart';
-import '/feature/login/login_binding.dart';
-import '/feature/places/detail/place_detail_binding.dart';
 import '/feature/loader/loading_page.dart';
+import '/feature/login/login_binding.dart';
 import '/feature/login/login_page.dart';
-import '/feature/places/detail/place_detail_page.dart';
 
 import 'page_names.dart';
 
 class PageRoutes {
   static final pages = [
     GetPage(
-      name: PageName.LOGIN,
-      page: () => LoginPage(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
       name: PageName.LOADER,
       page: () => const LoadingPage(),
     ),
     GetPage(
-      name: PageName.HOME,
+      name: PageName.LOGIN,
+      page: () => const LoginPage(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: PageName.NAVTAB,
       page: () => const NavTabPage(),
       binding: NavTabBinding()
     ),
     GetPage(
-      name: PageName.PROFILE, 
-      page: () => ProfilePage()
+      name: PageName.HOME,
+      page: () => const HomePage(),
     ),
     GetPage(
-      name: PageName.USER_DETAIL,
-      page: () => PlaceDetailPage(),
-      binding: PlaceDetailBinding()
+      name: PageName.MY_EMPLOYEE,
+      page: () => const MyEmployeePage(),
+    ),
+    GetPage(
+      name: PageName.NOTIFICATION,
+      page: () => const NotificationPage(),
+    ),
+    GetPage(
+      name: PageName.PROFILE,
+      page: () => const ProfilePage(),
     ),
   ];
 }

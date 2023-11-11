@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '/data/local/storage/storage_manager.dart';
-import '/data/model/converter.dart';
 import '/data/remote/base/base_refresher_status.dart';
 
 abstract class BaseController<T> extends GetxController {
@@ -46,22 +43,22 @@ abstract class BaseController<T> extends GetxController {
 
   /// **NOTE:**
   /// make sure you call this method at initial state, before you call method [saveCacheAndFinish]
-  Future<void> getCache({String id = '0'}) async {
-    var cache = storage.get(storageName);
-    if (storage.has(storageName)) {
-      if (cache != null && cache.toString().isNotEmpty) {
-        if (isUsingList) {
-          _setFinishCallbacks(
-              list: List<T>.from(
-                  json.decode(cache).map((x) => Converter<T>().fromJson(x))));
-        } else {
-          if (id == getId(cache)) {
-            _setFinishCallbacks(data: Converter<T>().fromJson(cache));
-          }
-        }
-      }
-    }
-  }
+  // Future<void> getCache({String id = '0'}) async {
+  //   var cache = storage.get(storageName);
+  //   if (storage.has(storageName)) {
+  //     if (cache != null && cache.toString().isNotEmpty) {
+  //       if (isUsingList) {
+  //         _setFinishCallbacks(
+  //             list: List<T>.from(
+  //                 json.decode(cache).map((x) => Converter<T>().fromJson(x))));
+  //       } else {
+  //         if (id == getId(cache)) {
+  //           _setFinishCallbacks(data: Converter<T>().fromJson(cache));
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   String getId(Map<String, dynamic> cache) {
     return (cache['id'] ?? '0').toString();
@@ -70,16 +67,16 @@ abstract class BaseController<T> extends GetxController {
   /// **NOTE:**
   /// call this to finish the load data,
   /// don't need to call [finishLoadData] anymore
-  Future<void> saveCacheAndFinish(
-      {List<T>? list, T? data, int page = 1}) async {
-    this.page.value = page;
-    await storage.write(
-        storageName,
-        isUsingList
-            ? json.encode(list ?? [])
-            : (data != null ? Converter<T>().toJson(data) : ""));
-    finishLoadData(list: list, data: data);
-  }
+  // Future<void> saveCacheAndFinish(
+  //     {List<T>? list, T? data, int page = 1}) async {
+  //   this.page.value = page;
+  //   await storage.write(
+  //       storageName,
+  //       isUsingList
+  //           ? json.encode(list ?? [])
+  //           : (data != null ? Converter<T>().toJson(data) : ""));
+  //   finishLoadData(list: list, data: data);
+  // }
 
   /// **Note:**
   /// the state will go to error state if the [errorMessage] is not null,

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable
+
 import 'package:get/get.dart';
 import '/data/local/storage/storage_constants.dart';
 import '/data/local/storage/storage_manager.dart';
@@ -12,6 +14,7 @@ class AuthController extends GetxController {
   Rxn<AuthState> authState = Rxn<AuthState>();
 
   Stream<AuthState?> get stream => authState.stream;
+
   AuthState? get state => authState.value;
 
   var storage = StorageManager();
@@ -46,7 +49,7 @@ class AuthController extends GetxController {
       await clearData();
       Get.offAllNamed(PageName.LOGIN);
     } else if (state?.appStatus == AppType.AUTHENTICATED) {
-      Get.offAllNamed(PageName.HOME);
+      Get.offAllNamed(PageName.NAVTAB);
     } else {
       Get.toNamed(PageName.LOADER);
     }
@@ -69,7 +72,6 @@ class AuthController extends GetxController {
   Future<void> saveAuthData({required User user, required String token}) async {
     await storage.write(StorageName.USERS, user.toJson());
     await secureStorage.setToken(value: token);
-    setAuth();
   }
 
   Future<void> signOut() async {
@@ -78,7 +80,7 @@ class AuthController extends GetxController {
     authState.value = AuthState(appStatus: AppType.UNAUTHENTICATED);
   }
 
-  void setAuth() {
+  void setAuth() async {
     authState.value = AuthState(appStatus: AppType.AUTHENTICATED);
   }
 

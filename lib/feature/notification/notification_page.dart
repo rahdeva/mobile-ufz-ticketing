@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '/feature/profile/profile_controller.dart';
+import '/feature/notification/notification_controller.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class NotificationPage extends StatelessWidget {
+  const NotificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<NotificationController>(
       builder: (controller) {
         return Scaffold(
             body: SingleChildScrollView(

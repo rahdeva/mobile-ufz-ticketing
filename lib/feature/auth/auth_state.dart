@@ -1,7 +1,14 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:equatable/equatable.dart';
 import '/model/user.dart';
 
-enum AppType { INITIAL, UNAUTHENTICATED, LOAD, AUTHENTICATED }
+enum AppType { 
+  INITIAL, 
+  UNAUTHENTICATED, 
+  LOAD, 
+  AUTHENTICATED,
+}
 
 class AuthState extends Equatable {
   final User? user;
