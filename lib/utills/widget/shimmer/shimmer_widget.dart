@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_ufz_ticketing/resources/resources.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 
@@ -195,7 +196,7 @@ class ShimmerWidget extends StatelessWidget {
 
   static Container listComponent2({
     int titleTextCount = 3,
-    double borderRadiusContainer = 15,
+    double borderRadiusContainer = 5,
     Color containerColor = Colors.white,
     double circleRadius = 30,
     Axis direction = Axis.vertical,
@@ -206,73 +207,68 @@ class ShimmerWidget extends StatelessWidget {
       ? 100.w
       : 80.w,
       decoration: BoxDecoration(
-        color: containerColor,
+        image: DecorationImage(
+          image: AppImages.imgListBGShimmer.image().image,
+          fit: BoxFit.fill
+        ),
         borderRadius: BorderRadius.circular(
           borderRadiusContainer
         ),
         boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF000E33).withOpacity(0.10),
-            spreadRadius: 0,
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          )
+          // BoxShadow(
+          //   color: const Color(0xFF000E33).withOpacity(0.10),
+          //   spreadRadius: 0,
+          //   blurRadius: 10,
+          //   offset: const Offset(0, 2),
+          // )
         ],
       ),
-      padding: (direction == Axis.vertical)
-      ? const EdgeInsets.symmetric(horizontal: 16, vertical: 24)
-      : const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(width: 8),
-          circleComponent(radius: circleRadius),
-          const SizedBox(width: 16),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              boxComponent(
-                height: 18, 
-                width: (direction == Axis.vertical) ? 56.w : 48.w, 
-                color: color
-              ),
-              titleTextCount > 1
-              ? Column(
+          Container(
+            height: 172,
+            width: 100.w - 220,
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                boxComponent(
+                  height: 18, 
+                  width: 24.w,
+                  color: color
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 16),
                     boxComponent(
-                      height: 12, 
-                      width: (direction == Axis.vertical) ? 48.w : 36.w,
+                      height: 18, 
+                      width: 36.w,
+                      color: color
+                    ),
+                    const SizedBox(height: 8),
+                    boxComponent(
+                      height: 18, 
+                      width: 24.w,
                       color: color
                     ),
                   ],
-                )
-              : const SizedBox(),
-              titleTextCount > 2
-              ? Column(
-                  children: [
-                    const SizedBox(height: 16),
-                    boxComponent(
-                      height: 10, 
-                      width: (direction == Axis.vertical) ? 36.w : 24.w,
-                      color: color
-                    ),
-                  ],
-                )
-              : const SizedBox(),
-              titleTextCount > 3
-              ? Column(
-                  children: [
-                    const SizedBox(height: 16),
-                    boxComponent(
-                      height: 8, 
-                      width: (direction == Axis.vertical) ? 24.w : 16.w,
-                      color: color
-                    ),
-                  ],
-                )
-              : const SizedBox()
-            ],
+                ),
+                boxComponent(
+                  height: 18, 
+                  width: 24.w,
+                  color: color
+                ),
+              ],
+            ),
+          ),
+          boxComponent(
+            height: 172, 
+            width: 150,
+            color: color,
+            borderRadius: 5
           ),
         ],
       )

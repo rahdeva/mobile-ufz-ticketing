@@ -84,6 +84,10 @@ class $LibResourcesImagesGen {
   AssetGenImage get imgListBGRed =>
       const AssetGenImage('lib/resources/images/img_listBG_red.png');
 
+  /// File path: lib/resources/images/img_listBG_shimmer.png
+  AssetGenImage get imgListBGShimmer =>
+      const AssetGenImage('lib/resources/images/img_listBG_shimmer.png');
+
   /// File path: lib/resources/images/img_listBG_yellow.png
   AssetGenImage get imgListBGYellow =>
       const AssetGenImage('lib/resources/images/img_listBG_yellow.png');
@@ -109,6 +113,7 @@ class $LibResourcesImagesGen {
         imgListBGGreen,
         imgListBGPurple,
         imgListBGRed,
+        imgListBGShimmer,
         imgListBGYellow,
         userPlaceholder
       ];

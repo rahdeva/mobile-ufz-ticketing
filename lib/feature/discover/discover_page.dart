@@ -44,22 +44,18 @@ class DiscoverPage extends StatelessWidget {
                         controller: controller.refreshController,
                         onRefresh: controller.refreshPage,
                         onLoading: controller.loadNextPage,
-                        child: ShimmerWidget.listScreenShimmer(
+                        child: (controller.isLoading)
+                        ? ShimmerWidget.listScreenShimmer(
                             margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                             listComponent: ShimmerWidget.listComponent2()
                           )
-                        // child: (controller.isLoading)
-                        // ? ShimmerWidget.listScreenShimmer(
-                        //     margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        //     listComponent: ShimmerWidget.listComponent2()
-                        //   )
-                        // : (controller.dataList.isEmpty)
-                        //   ? const Center(
-                        //       child: Text("asasa"),
-                        //     )
-                        //   : ListEventDiscoveryBuilder(
-                        //       controller: controller
-                        //     ),
+                        : (controller.dataList.isEmpty)
+                          ? const Center(
+                              child: Text("asasa"),
+                            )
+                          : ListEventDiscoveryBuilder(
+                              controller: controller
+                            ),
                       ),
                     ],
                   ),
