@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_ufz_ticketing/feature/discover/discover_controller.dart';
+import 'package:mobile_ufz_ticketing/feature/discover/widgets/empty_list_event.dart';
 import 'package:mobile_ufz_ticketing/feature/discover/widgets/event_discovery_list_builder.dart';
 import 'package:mobile_ufz_ticketing/resources/resources.dart';
 import 'package:mobile_ufz_ticketing/utills/widget/shimmer/shimmer_widget.dart';
@@ -50,9 +51,7 @@ class DiscoverPage extends StatelessWidget {
                             listComponent: ShimmerWidget.listComponent2()
                           )
                         : (controller.dataList.isEmpty)
-                          ? const Center(
-                              child: Text("asasa"),
-                            )
+                          ? const EmptyListEvent()
                           : ListEventDiscoveryBuilder(
                               controller: controller
                             ),
