@@ -20,7 +20,7 @@ class NavTabPage extends StatelessWidget {
             child: IndexedStack(
               index: controller.tabIndex,
               children: const [
-                DashboardPage(),
+                DiscoverPage(),
                 PastTicketPage(),
                 SettingPage(),
               ],

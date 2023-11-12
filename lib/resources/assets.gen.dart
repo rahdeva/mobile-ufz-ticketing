@@ -32,6 +32,14 @@ class $LibResourcesImagesGen {
   AssetGenImage get icDiscoverUnactive =>
       const AssetGenImage('lib/resources/images/ic_discover_unactive.png');
 
+  /// File path: lib/resources/images/ic_event.png
+  AssetGenImage get icEvent =>
+      const AssetGenImage('lib/resources/images/ic_event.png');
+
+  /// File path: lib/resources/images/ic_flash.png
+  AssetGenImage get icFlash =>
+      const AssetGenImage('lib/resources/images/ic_flash.png');
+
   /// File path: lib/resources/images/ic_past_ticket_active.png
   AssetGenImage get icPastTicketActive =>
       const AssetGenImage('lib/resources/images/ic_past_ticket_active.png');
@@ -39,6 +47,10 @@ class $LibResourcesImagesGen {
   /// File path: lib/resources/images/ic_past_ticket_unactive.png
   AssetGenImage get icPastTicketUnactive =>
       const AssetGenImage('lib/resources/images/ic_past_ticket_unactive.png');
+
+  /// File path: lib/resources/images/ic_scan.png
+  AssetGenImage get icScan =>
+      const AssetGenImage('lib/resources/images/ic_scan.png');
 
   /// File path: lib/resources/images/ic_setting_active.png
   AssetGenImage get icSettingActive =>
@@ -56,6 +68,26 @@ class $LibResourcesImagesGen {
   AssetGenImage get imgError =>
       const AssetGenImage('lib/resources/images/img_error.png');
 
+  /// File path: lib/resources/images/img_listBG_blue.png
+  AssetGenImage get imgListBGBlue =>
+      const AssetGenImage('lib/resources/images/img_listBG_blue.png');
+
+  /// File path: lib/resources/images/img_listBG_green.png
+  AssetGenImage get imgListBGGreen =>
+      const AssetGenImage('lib/resources/images/img_listBG_green.png');
+
+  /// File path: lib/resources/images/img_listBG_purple.png
+  AssetGenImage get imgListBGPurple =>
+      const AssetGenImage('lib/resources/images/img_listBG_purple.png');
+
+  /// File path: lib/resources/images/img_listBG_red.png
+  AssetGenImage get imgListBGRed =>
+      const AssetGenImage('lib/resources/images/img_listBG_red.png');
+
+  /// File path: lib/resources/images/img_listBG_yellow.png
+  AssetGenImage get imgListBGYellow =>
+      const AssetGenImage('lib/resources/images/img_listBG_yellow.png');
+
   /// File path: lib/resources/images/user_placeholder.png
   AssetGenImage get userPlaceholder =>
       const AssetGenImage('lib/resources/images/user_placeholder.png');
@@ -64,12 +96,20 @@ class $LibResourcesImagesGen {
   List<AssetGenImage> get values => [
         icDiscoverActive,
         icDiscoverUnactive,
+        icEvent,
+        icFlash,
         icPastTicketActive,
         icPastTicketUnactive,
+        icScan,
         icSettingActive,
         icSettingUnactive,
         imgEmpty,
         imgError,
+        imgListBGBlue,
+        imgListBGGreen,
+        imgListBGPurple,
+        imgListBGRed,
+        imgListBGYellow,
         userPlaceholder
       ];
 }

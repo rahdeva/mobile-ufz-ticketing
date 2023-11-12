@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
                             hintText: 'txt_flow_login_enter_email'.tr,
                             validator: Validator.list([
                               Validator.required(),
-                              Validator.email(),
+                              // Validator.email(),
                             ]),
                             keyboardType: TextInputType.emailAddress,
                             floatingLabelBehavior: FloatingLabelBehavior.always,

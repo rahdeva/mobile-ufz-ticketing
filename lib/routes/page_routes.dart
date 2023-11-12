@@ -34,8 +34,8 @@ class PageRoutes {
       binding: NavTabBinding()
     ),
     GetPage(
-      name: PageName.DASHBOARD,
-      page: () => const DashboardPage(),
+      name: PageName.DISCOVER,
+      page: () => const DiscoverPage(),
     ),
     GetPage(
       name: PageName.PAST_TICKET,

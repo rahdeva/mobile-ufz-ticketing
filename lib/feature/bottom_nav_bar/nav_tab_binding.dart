@@ -8,7 +8,7 @@ class NavTabBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<NavTabController>(() => NavTabController());
-    Get.lazyPut<DashboardController>(() => DashboardController());
+    Get.lazyPut<DiscoverController>(() => DiscoverController());
     Get.lazyPut<PastTicketController>(() => PastTicketController());
     Get.lazyPut<SettingController>(() => SettingController());
   }

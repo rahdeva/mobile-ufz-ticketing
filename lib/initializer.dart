@@ -11,7 +11,7 @@ class Initializer {
       _initScreenPreference();
       await GetStorage.init(StorageName.STORAGE_NAME);
       await Get.putAsync<FlutterSecureStorage>(() async {
-        return FlutterSecureStorage();
+        return const FlutterSecureStorage();
       });
       Get.put<AuthController>(AuthController());
     } catch (err) {
