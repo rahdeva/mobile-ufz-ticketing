@@ -1,5 +1,13 @@
 import 'package:get/get.dart';
 import 'package:mobile_ufz_ticketing/feature/discover/discover_page.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/forgot_password_binding.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/forgot_password_page.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/otp_verification/otp_verification_binding.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/otp_verification/otp_verification_page.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/reset_password_binding.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/reset_password_page.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/success_reset/success_reset_binding.dart';
+import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/success_reset/success_reset_page.dart';
 import 'package:mobile_ufz_ticketing/feature/setting/setting_page.dart';
 import '/feature/bottom_nav_bar/nav_tab_binding.dart';
 import '/feature/bottom_nav_bar/nav_tab_page.dart';
@@ -32,6 +40,26 @@ class PageRoutes {
     GetPage(
       name: PageName.PAST_TICKET,
       page: () => const SettingPage(),
+    ),
+    GetPage(
+      name: PageName.FORGOT_PASSWORD,
+      page: () => const ForgotPasswordPage(),
+      binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: PageName.OTP_VERIFICATION,
+      page: () => const OTPVerificationPage(),
+      binding: OTPVerificationBinding()
+    ),
+    GetPage(
+      name: PageName.RESET_PASSWORD,
+      page: () => const ResetPasswordPage(),
+      binding: ResetPasswordBinding(),
+    ),
+    GetPage(
+      name: PageName.SUCCESS_RESET_PASSWORD,
+      page: () => const SuccessResetPasswordPage(),
+      binding: SuccessResetPasswordBinding()
     ),
   ];
 }

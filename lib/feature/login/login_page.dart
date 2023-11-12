@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
+import 'package:mobile_ufz_ticketing/routes/page_names.dart';
 import 'package:mobile_ufz_ticketing/utills/widget/button/secondary_button.dart';
 import 'package:mobile_ufz_ticketing/utills/widget/forms/label_form_widget.dart';
 import '/utills/helper/validator.dart';
@@ -77,8 +78,11 @@ class LoginPage extends StatelessWidget {
                           TextFieldWidget(
                             name: 'email',
                             hintText: 'txt_flow_login_enter_email'.tr,
-                            validator: Validator.required(),
-                            keyboardType: TextInputType.text,
+                            validator: Validator.list([
+                              Validator.required(),
+                              Validator.email(),
+                            ]),
+                            keyboardType: TextInputType.emailAddress,
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             borderRadius: 8,
                           ),
@@ -112,7 +116,9 @@ class LoginPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           InkWell(
-                            onTap: (){}, 
+                            onTap: (){
+                              Get.toNamed(PageName.FORGOT_PASSWORD);
+                            }, 
                             child: Text(
                               'txt_flow_login_forgot_password'.tr,
                               style: Theme.of(context).textTheme.bodyMedium!.copyWith(

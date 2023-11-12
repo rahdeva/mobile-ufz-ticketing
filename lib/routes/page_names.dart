@@ -6,5 +6,9 @@ class PageName {
   static const NAVTAB = "/nav-tab";
   static const DASHBOARD = "/dashboard";
   static const PAST_TICKET = "/past-ticket";
-  static const SETTING = "/setting"; 
+  static const SETTING = "/setting";
+  static const FORGOT_PASSWORD = "/forgot-password";
+  static const OTP_VERIFICATION = "/otp-verification";
+  static const RESET_PASSWORD = "/reset-password";
+  static const SUCCESS_RESET_PASSWORD = "/success-reset-password";
 }

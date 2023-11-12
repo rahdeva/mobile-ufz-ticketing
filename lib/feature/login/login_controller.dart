@@ -16,7 +16,6 @@ import '/model/user.dart';
 class LoginController extends BaseController<User> {
   final AuthController authController = AuthController.find;
   final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
-  final GlobalKey<FormBuilderState> forgotFormKey = GlobalKey<FormBuilderState>();
 
   bool isObscure = true;
 
