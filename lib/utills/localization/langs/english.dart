@@ -12,6 +12,7 @@ const Map<String, String> en = {
   'txt_flow_login_password': 'Password',
   'txt_flow_login_enter_password': 'input password',
   'txt_flow_login_language': 'Language',
+  'txt_flow_login_change_language': 'Change Language',
   'txt_flow_login_forgot_password': 'Forgot Password?',
   'txt_flow_login_login': 'Login',
   'txt_flow_login_indonesian': 'Indonesian',

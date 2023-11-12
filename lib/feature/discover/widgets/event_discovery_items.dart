@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mobile_ufz_ticketing/feature/discover/discover_controller.dart';
 import 'package:mobile_ufz_ticketing/model/event_discovery.dart';
+import 'package:mobile_ufz_ticketing/routes/page_names.dart';
 import 'package:sizer/sizer.dart';
 import '/resources/resources.dart';
 
@@ -20,6 +22,9 @@ class EventDicoveryListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        Get.toNamed(
+          PageName.QR_VIEW,
+        );
         // Get.toNamed(
         //   PageName.DETAIL_DATA_PATROLI,
         //   arguments: mData

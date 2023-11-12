@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mobile_ufz_ticketing/utills/localization/locale_helper.dart';
 import '/data/local/storage/storage_constants.dart';
 import '/data/local/storage/storage_manager.dart';
 import '/model/user.dart';
@@ -65,7 +67,14 @@ class AuthController extends GetxController {
   }
 
   Future<void> clearData() async {
+    Locale currentLocale = LocaleHelper.getCurrentLocale();
     storage.clearAll();
+    if(currentLocale == Locale('en')){
+      LocaleHelper.saveLanguagesToCache("English"); 
+    }
+    if(currentLocale == Locale('id')){
+      LocaleHelper.saveLanguagesToCache("Indonesia"); 
+    }
     await secureStorage.setToken(value: '');
   }
 
@@ -75,8 +84,15 @@ class AuthController extends GetxController {
   }
 
   Future<void> signOut() async {
+    Locale currentLocale = LocaleHelper.getCurrentLocale();
     await secureStorage.setToken(value: '');
     await storage.clearAll();
+    if(currentLocale == Locale('en')){
+      LocaleHelper.saveLanguagesToCache("English"); 
+    }
+    if(currentLocale == Locale('id')){
+      LocaleHelper.saveLanguagesToCache("Indonesia"); 
+    }
     authState.value = AuthState(appStatus: AppType.UNAUTHENTICATED);
   }
 

@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         translations: AppTranslation(),
-        locale: LocaleHelper().getCurrentLocale(),
+        locale: LocaleHelper.getCurrentLocale(),
         fallbackLocale: LocaleHelper().fallbackLocale,
         initialRoute: PageName.LOADER,
         getPages: PageRoutes.pages,

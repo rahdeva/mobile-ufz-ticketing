@@ -11,4 +11,5 @@ class PageName {
   static const OTP_VERIFICATION = "/otp-verification";
   static const RESET_PASSWORD = "/reset-password";
   static const SUCCESS_RESET_PASSWORD = "/success-reset-password";
+  static const QR_VIEW = "/qr-view";
 }

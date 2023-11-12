@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:mobile_ufz_ticketing/routes/page_names.dart';
+import 'package:mobile_ufz_ticketing/utills/localization/locale_helper.dart';
 import 'package:mobile_ufz_ticketing/utills/widget/button/secondary_button.dart';
 import 'package:mobile_ufz_ticketing/utills/widget/forms/label_form_widget.dart';
 import '/utills/helper/validator.dart';
@@ -38,7 +40,74 @@ class LoginPage extends StatelessWidget {
                           width: 120,
                           buttonText: "txt_flow_login_language".tr,
                           padding: 5,
-                          onPressed: (){}
+                          onPressed: (){
+                            showCupertinoModalPopup<void>(
+                              context: context,
+                              builder: (BuildContext context) => CupertinoActionSheet(
+                                title: Text(
+                                  'txt_flow_login_change_language'.tr,
+                                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.black
+                                  ),
+                                ),
+                                actions: <CupertinoActionSheetAction>[
+                                  CupertinoActionSheetAction(
+                                    onPressed: () {
+                                      LocaleHelper.updateLocale(context, const Locale('en'), "English");
+                                    },
+                                    child: Container(
+                                      margin: const EdgeInsets.symmetric(horizontal: 16),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'txt_flow_login_english'.tr,
+                                            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                              fontWeight: FontWeight.w500,
+                                              color: AppColors.black
+                                            ),
+                                          ),
+                                          LocaleHelper.getCurrentLocale() == const Locale('en')
+                                          ? const Icon(
+                                              Icons.check,
+                                              color: AppColors.black,
+                                            )
+                                          : const SizedBox()
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  CupertinoActionSheetAction(
+                                    onPressed: () {
+                                      LocaleHelper.updateLocale(context, const Locale('id'), "Indonesia");
+                                    },
+                                    child: Container(
+                                      margin: const EdgeInsets.symmetric(horizontal: 16),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'txt_flow_login_indonesian'.tr,
+                                            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                              fontWeight: FontWeight.w500,
+                                              color: AppColors.black
+                                            ),
+                                          ),
+                                          LocaleHelper.getCurrentLocale() == const Locale('id')
+                                          ? const Icon(
+                                              Icons.check,
+                                              color: AppColors.black,
+                                            )
+                                          : const SizedBox()
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
                         ),
                       ),
                     ),

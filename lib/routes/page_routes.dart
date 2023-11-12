@@ -8,6 +8,8 @@ import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/rese
 import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/reset_password_page.dart';
 import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/success_reset/success_reset_binding.dart';
 import 'package:mobile_ufz_ticketing/feature/forgot_password/reset_password/success_reset/success_reset_page.dart';
+import 'package:mobile_ufz_ticketing/feature/qr_view/qr_view_binding.dart';
+import 'package:mobile_ufz_ticketing/feature/qr_view/qr_view_page.dart';
 import 'package:mobile_ufz_ticketing/feature/setting/setting_page.dart';
 import '/feature/bottom_nav_bar/nav_tab_binding.dart';
 import '/feature/bottom_nav_bar/nav_tab_page.dart';
@@ -60,6 +62,11 @@ class PageRoutes {
       name: PageName.SUCCESS_RESET_PASSWORD,
       page: () => const SuccessResetPasswordPage(),
       binding: SuccessResetPasswordBinding()
+    ),
+    GetPage(
+      name: PageName.QR_VIEW,
+      page: () => const QrViewPage(),
+      binding: QrViewBinding(),
     ),
   ];
 }
